@@ -1,7 +1,10 @@
 node_modules
+.vercel*
+.vscode*
 dist
 .env
 .env*.local
 *.log
 generated
 .DS_Store
+.vercel

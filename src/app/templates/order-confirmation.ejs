@@ -1,0 +1,14 @@
+<% const rows = items.map((item) => `<tr><td style="padding:10px 0;border-bottom:1px solid #eee9e1;font-size:14px;">${item.name}<br /><span style="color:#8a8275;font-size:12px;">${item.size} / ${item.color} · ×${item.quantity}</span></td><td align="right" style="padding:10px 0;border-bottom:1px solid #eee9e1;font-size:14px;">$${Number(item.lineTotal).toFixed(2)}</td></tr>`).join("") %>
+<% const body = `
+<h1 style="font-size:22px;margin:0 0 12px;">Order ${orderNumber} confirmed</h1>
+<p style="color:#54504a;line-height:1.7;">Thanks ${name} — we're preparing your pieces now.</p>
+<table role="presentation" width="100%" style="margin:20px 0;">${rows}
+<tr><td style="padding:10px 0;font-size:13px;color:#8a8275;">Subtotal</td><td align="right" style="font-size:13px;color:#8a8275;">$${Number(subtotal).toFixed(2)}</td></tr>
+<tr><td style="padding:2px 0;font-size:13px;color:#8a8275;">Shipping</td><td align="right" style="font-size:13px;color:#8a8275;">$${Number(shipping).toFixed(2)}</td></tr>
+<tr><td style="padding:2px 0;font-size:13px;color:#8a8275;">Discount</td><td align="right" style="font-size:13px;color:#8a8275;">-$${Number(discount).toFixed(2)}</td></tr>
+<tr><td style="padding:2px 0;font-size:13px;color:#8a8275;">Tax</td><td align="right" style="font-size:13px;color:#8a8275;">$${Number(tax).toFixed(2)}</td></tr>
+<tr><td style="padding:12px 0;font-size:15px;font-weight:600;">Total</td><td align="right" style="font-size:15px;font-weight:600;">$${Number(total).toFixed(2)}</td></tr>
+</table>
+<p style="color:#8a8275;font-size:13px;line-height:1.7;">Shipping to ${address.fullName}, ${address.line1}, ${address.city} ${address.postcode}, ${address.country}</p>
+` %>
+<%- include("_layout") %>

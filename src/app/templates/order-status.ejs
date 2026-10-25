@@ -1,0 +1,5 @@
+<% const body = `<h1 style="font-size:22px;margin:0 0 12px;">Order <%= orderNumber %> updated</h1>
+<p style="color:#54504a;line-height:1.7;">Your order status is now <strong><%= status.replace(/_/g, " ") %></strong>.</p>
+<% if (typeof note !== "undefined" && note) { %><p style="color:#54504a;line-height:1.7;"><%= note %></p><% } %>
+<% if (typeof trackingNumber !== "undefined" && trackingNumber) { %><p style="color:#54504a;line-height:1.7;">Tracking number: <strong><%= trackingNumber %></strong></p><% } %>` %>
+<%- include("_layout") %>
